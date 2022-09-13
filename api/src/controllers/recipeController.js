@@ -12,12 +12,13 @@ const getApiRecipes = async () => {
         // );
         // const recipeInfo = await apiCall.data.results.map(recipe => {
         const recipeInfo = API.results.map(recipe => {
+            const { id, name, healthScore, image } = recipe;
             return {
-                id: recipe.id,
-                name: recipe.title,
-                summary: recipe.summary,
-                healthScore: recipe.healthScore,
-                image: recipe.image,
+                id,
+                name,
+                summary,
+                healthScore,
+                image,
                 steps: recipe.analyzedInstructions[0] && recipe.analyzedInstructions[0].steps
                     ? recipe.analyzedInstructions[0].steps.map((item) => item.step).join(" \n")
                     : "",
