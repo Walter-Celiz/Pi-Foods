@@ -12,16 +12,17 @@ const getApiRecipes = async () => {
         // );
         // const recipeInfo = await apiCall.data.results.map(recipe => {
         const recipeInfo = API.results.map(recipe => {
-            const { id, name, healthScore, image } = recipe;
+            const { id, summary, healthScore, image } = recipe;
             return {
                 id,
-                name,
+                name: recipe.title,
                 summary,
                 healthScore,
                 image,
                 steps: recipe.analyzedInstructions[0] && recipe.analyzedInstructions[0].steps
-                    ? recipe.analyzedInstructions[0].steps.map((item) => item.step).join(" \n")
+                    ? recipe.analyzedInstructions[0].steps.map((item) => item.step).join(". \n")
                     : "",
+                diets: recipe.diets.join(" ")
             }
         })
         return recipeInfo
@@ -79,7 +80,7 @@ const getAllRecipesOrName = async (req, res) => {
     }
 };
 
-const getApiRecipeById = async (req, res) => {
+const getRecipeById = async (req, res) => {
     try {
         const allRecipes = await getRecipes();
         const { id } = req.params;
@@ -128,6 +129,12 @@ const createRecipe = async (req, res) => {
 
 module.exports = {
     getAllRecipesOrName,
-    getApiRecipeById,
+    getRecipeById,
     createRecipe
 };
+
+
+
+
+
+

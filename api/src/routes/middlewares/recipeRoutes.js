@@ -2,13 +2,13 @@ const { Router } = require("express");
 const router = Router();
 const {
     getAllRecipesOrName,
-    getApiRecipeById,
+    getRecipeById,
     createRecipe,
 } = require("../../controllers/recipeController");
 
 //all this routes start with "/recipes"
 router.get("/", getAllRecipesOrName);
-router.get("/:id", getApiRecipeById);
+router.get("/:id", getRecipeById);
 router.post("/", createRecipe);
 
 module.exports = router;
