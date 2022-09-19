@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 
-function LandingPage() {
+export default function LandingPage() {
     return (
         <div>
             <h2>Bienvenidos</h2>
@@ -12,4 +12,3 @@ function LandingPage() {
     )
 }
 
-export default LandingPage

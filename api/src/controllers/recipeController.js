@@ -119,7 +119,6 @@ const createRecipe = async (req, res) => {
 
         recipeCreated.addDiet(diets)
         res.status(200).send(" Recipe created!!! 🟢🟢🟢🟢")
-
         // .then((recipe) => recipe.addDiet(diets))
         // .then(res.send("Recipe created!!! 🟢🟢🟢🟢"))
     } catch (error) {

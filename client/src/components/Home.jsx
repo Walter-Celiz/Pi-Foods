@@ -1,20 +1,23 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import {
     getRecipes,
     filterRecipeByDiet,
     filterCreated,
-    orderBy,
+    orderByName,
+    orderByScore,
 } from "../redux/actions";
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import Paginate from "./Paginate";
+import SearchBar from "./SearchBar";
 
 export default function Home() {
     const dispatch = useDispatch();
-    const allRecipes = useSelector((state) => state.recipes); //arreglo del estado
-    const [, setOrder] = useState('');
+    //arreglo del estado
+    const allRecipes = useSelector((state) => state.recipes);
+    // eslint-disable-next-line no-unused-vars
+    const [order, setOrder] = useState("");
 
     // Pagination
     const [currentPage, setCurrentPage] = useState(1);
@@ -26,7 +29,6 @@ export default function Home() {
     const paginated = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
-
 
     useEffect(() => {
         dispatch(getRecipes());
@@ -45,68 +47,99 @@ export default function Home() {
         dispatch(filterCreated(e.target.value));
     }
 
-    function handleOrderBy(e) {
+    function handleOrderByName(e) {
         e.preventDefault();
-        dispatch(orderBy(e.target.value));
-        setCurrentPage(1)
-        setOrder(`Ordenado ${e.target.value}`)
+        dispatch(orderByName(e.target.value));
+        setCurrentPage(1);
+        setOrder(e.target.value);
+    }
+
+    function handleOrderByScore(e) {
+        e.preventDefault();
+        dispatch(orderByScore(e.target.value));
+        setCurrentPage(1);
+        setOrder(e.target.value);
     }
 
     return (
         <div>
-            <Link to="/recipes">Create Recipe</Link>
-            <Link to="/recipes">About Me</Link>
-            <h2>Michi foods</h2>
-            <button
-                onClick={(e) => {
-                    handleClick(e);
-                }}
-            >
-                Clear Filters
-            </button>
+            <div>
+                <h2>logo foods</h2>
+                <Link to="/recipes">Create/Edit</Link>
+                <Link to="/aboutme">About Me</Link>
+            </div>
 
             <div>
-                <select onChange={(e) => handleOrderBy(e)}>
-                    <option value="asc"> ↑ </option>
-                    <option value="des"> ↓ </option>
-                </select>
-                <select onChange={(e) => handleFilterByDiet(e)}>
-                    <option value="gluten free">Glutten Free</option>
-                    <option value="dairy free">Dairy Free</option>
-                    <option value="lacto ovo vegetarian">Lacto ovo vegetarian</option>
-                    <option value="vegan">Vegan</option>
-                    <option value="paleolithic">Paleolithic</option>
-                    <option value="primal">Primal</option>
-                    <option value="whole 30">Whole 30</option>
-                    <option value="pescaterian">Pescaterian</option>
-                    <option value="ketogenic">Ketogenic</option>
-                    <option value="fodmap friendly">Fodmap Friendly</option>
-                </select>
-                <select onChange={(e) => handleFilterCreated(e)}>
-                    <option value="all">All</option>
-                    <option value="created">Created</option>
-                </select>
+                <div>
+                    <select onChange={(e) => handleOrderByName(e)}>
+                        <option value="asc"> A-Z </option>
+                        <option value="des"> Z-A </option>
+                    </select>
+                </div>
 
+                <div>
+                    <SearchBar />
+                </div>
+
+                <div>
+                    <select onChange={(e) => handleFilterByDiet(e)}>
+                        <option value="gluten free">Glutten Free</option>
+                        <option value="dairy free">Dairy Free</option>
+                        <option value="lacto ovo vegetarian">Lacto ovo vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="paleolithic">Paleolithic</option>
+                        <option value="primal">Primal</option>
+                        <option value="whole 30">Whole 30</option>
+                        <option value="pescaterian">Pescaterian</option>
+                        <option value="ketogenic">Ketogenic</option>
+                        <option value="fodmap friendly">Fodmap Friendly</option>
+                    </select>
+                </div>
+
+                <div>
+                    <select
+                        onChange={(e) => handleOrderByScore(e)}>
+                        <option value="ascd">Ascending Score</option>
+                        <option value="desc">Descending Score</option>
+                    </select>
+                </div>
+
+                <div>
+                    <select onChange={(e) => handleFilterCreated(e)}>
+                        <option value="all">All</option>
+                        <option value="created">Created</option>
+                    </select>
+                </div>
+
+                <div>
+                    <button
+                        onClick={(e) => { handleClick(e) }}>
+                        Clear Filters
+                    </button>
+                </div>
+            </div>
+
+            <div>
+                {currentRecipe?.map((recipe) => {
+                    return (
+                        <Card
+                            key={recipe.id}
+                            // id={recipe.id}
+                            name={recipe.name}
+                            image={recipe.image}
+                            diets={recipe.diets}
+                            healthScore={recipe.healthScore}
+                        />
+                    );
+                })}
+            </div>
+
+            <div>
                 <Paginate
                     recipesPerPage={recipesPerPage}
                     allRecipes={allRecipes.length}
                     paginated={paginated}
                 />
-
-                <div>
-                    {currentRecipe?.map((recipe) => {
-                        return (
-                            <Card
-                                key={recipe.id}
-                                id={recipe.id}
-                                name={recipe.name}
-                                image={recipe.image}
-                                diets={recipe.diets}
-                                healthScore={recipe.healthScore}
-                            />
-                        );
-                    })}
-                </div>
             </div>
         </div>
     );
