@@ -64,7 +64,10 @@ export default function Home() {
     return (
         <div>
             <div>
-                <h2>logo foods</h2>
+                <Link to="/home">
+                    <h2>logo foods</h2>
+                </Link>
+                <Link to="/home">Home</Link>
                 <Link to="/recipes/create">Create/Edit</Link>
                 <Link to="/aboutme">About Me</Link>
             </div>
@@ -74,6 +77,13 @@ export default function Home() {
                     <select onChange={(e) => handleOrderByName(e)}>
                         <option value="asc"> A-Z </option>
                         <option value="des"> Z-A </option>
+                    </select>
+                </div>
+
+                <div>
+                    <select onChange={(e) => handleOrderByScore(e)}>
+                        <option value="ascd">Ascending Score</option>
+                        <option value="desc">Descending Score</option>
                     </select>
                 </div>
 
@@ -93,13 +103,6 @@ export default function Home() {
                         <option value="pescaterian">Pescaterian</option>
                         <option value="ketogenic">Ketogenic</option>
                         <option value="fodmap friendly">Fodmap Friendly</option>
-                    </select>
-                </div>
-
-                <div>
-                    <select onChange={(e) => handleOrderByScore(e)}>
-                        <option value="ascd">Ascending Score</option>
-                        <option value="desc">Descending Score</option>
                     </select>
                 </div>
 
