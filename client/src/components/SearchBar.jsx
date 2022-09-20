@@ -6,7 +6,8 @@ export default function SearchBar() {
     const dispatch = useDispatch();
     const [name, setName] = useState("");
 
-    function handleInputChange(e) {
+    function handleChange(e) {
+        // console.log(name);
         e.preventDefault();
         setName(e.target.value);
     }
@@ -14,7 +15,7 @@ export default function SearchBar() {
     function handleSubmit(e) {
         e.preventDefault();
         dispatch(getRecipeByName(name));
-        setName("")
+        setName("");
     }
 
     return (
@@ -23,12 +24,9 @@ export default function SearchBar() {
                 type="text"
                 placeholder="Name of the Recipe..."
                 autoComplete="off"
-                onChange={(e) => handleInputChange(e)}
+                onChange={(e) => handleChange(e)}
             />
-            <input type="submit"
-                onClick={(e) => handleSubmit(e)}
-                value="Search"
-            />
+            <input type="submit" onClick={(e) => handleSubmit(e)} value="Search" />
         </form>
     );
 }

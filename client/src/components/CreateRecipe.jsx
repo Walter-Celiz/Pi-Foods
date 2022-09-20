@@ -1,14 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { postRecipe, getDiets } from "../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+
+function validate(input) {
+    let errors = {};
+    if (!input.name) {
+        errors.name = "Your recipe needs a Name";
+    } else if (input.summary.length > 255) {
+        errors.summary = "Please tell us what is your recipe about";
+    } else if (input.healthScore > 100 || input.healthScore < 0) {
+        errors.healthScore = "The health score must be a number between 0 and 100";
+    } else if (!input.image) {
+        errors.image = "It would be nice if you show us how it looks";
+    } else if (!input.steps) {
+        errors.steps = "Don't you wanna tell us how to do it ourselves?";
+    }
+    return errors;
+}
 
 export default function CreateRecipe() {
     const dispatch = useDispatch();
     const history = useHistory();
     const diets = useSelector((state) => state.diets);
 
-    const [input, setInput] = useState({ //state, setstate
+    const [errors, setErrors] = useState({});
+    const [input, setInput] = useState({
+        //state, setstate
         name: "",
         summary: "",
         healthScore: "",
@@ -22,7 +40,7 @@ export default function CreateRecipe() {
             ...input,
             [e.target.name]: e.target.value,
         });
-        console.log(input);
+        setErrors(validate(input));
     }
 
     function handleCheck(e) {
@@ -37,7 +55,6 @@ export default function CreateRecipe() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(input);
         dispatch(postRecipe(input));
         alert("recipe created");
         setInput({
@@ -69,6 +86,7 @@ export default function CreateRecipe() {
                         value={input.name}
                         onChange={(e) => handleChange(e)}
                     />
+                    {errors.name && <h5 className="error">{errors.name}</h5>}
                 </div>
                 <div>
                     <label>Summary:</label>
@@ -78,6 +96,7 @@ export default function CreateRecipe() {
                         value={input.summary}
                         onChange={(e) => handleChange(e)}
                     />
+                    {errors.summary && <h5 className="error">{errors.summary}</h5>}
                 </div>
                 <div>
                     <label>healthScore:</label>
@@ -87,6 +106,9 @@ export default function CreateRecipe() {
                         value={input.healthScore}
                         onChange={(e) => handleChange(e)}
                     />
+                    {errors.healthScore && (
+                        <h5 className="error">{errors.healthScore}</h5>
+                    )}
                 </div>
                 <div>
                     <label>Image:</label>
@@ -96,6 +118,7 @@ export default function CreateRecipe() {
                         value={input.image}
                         onChange={(e) => handleChange(e)}
                     />
+                    {errors.image && <h5 className="error">{errors.image}</h5>}
                 </div>
                 <div>
                     <label>Step by step:</label>
@@ -105,6 +128,7 @@ export default function CreateRecipe() {
                         value={input.steps}
                         onChange={(e) => handleChange(e)}
                     />
+                    {errors.steps && <h5 className="error">{errors.steps}</h5>}
                 </div>
                 <div>
                     <h3>Select which diet it belongs to</h3>

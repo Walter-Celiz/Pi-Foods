@@ -9,6 +9,6 @@ const {
 //all this routes start with "/recipes"
 router.get("/", getAllRecipesOrName);
 router.get("/:id", getRecipeById);
-router.post("/", createRecipe);
+router.post("/create", createRecipe);
 
 module.exports = router;

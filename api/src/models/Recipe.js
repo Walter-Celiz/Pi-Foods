@@ -21,23 +21,15 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       healthScore: {
-        type: DataTypes.FLOAT,
-        defaultValue: 0,
-        validate: {
-          min: 0,
-          max: 100,
-          isNumber(value) {
-            if (isNaN(value)) throw new Error("healthScore debe ser un numero");
-          },
-        },
+        type: DataTypes.INTEGER
       },
       steps: {
         type: DataTypes.TEXT,
       },
       image: {
         type: DataTypes.STRING,
-        defaultValue:
-          "https://www.trecebits.com/wp-content/uploads/2020/05/Cocina-800x445.jpg",
+        // defaultValue:
+        //   "https://www.trecebits.com/wp-content/uploads/2020/05/Cocina-800x445.jpg",
       },
       createdInDb: {
         type: DataTypes.BOOLEAN,

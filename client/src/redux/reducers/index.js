@@ -1,5 +1,8 @@
+import axios from "axios";
+
 const initialState = {
     recipes: [],
+    detail: [],
     allRecipes: [],
     recipesLoaded: [],
     diets: [],
@@ -90,15 +93,28 @@ function rootReducer(state = initialState, action) {
                 recipesLoaded: sortedRecipesHealthScore,
             };
 
+        // case "POST_RECIPE":
+        //     return {
+        //         ...state,
+        //     };
+
         case "POST_RECIPE":
+            axios.post("http://localhost:3001/recipe", action.payload);
             return {
                 ...state,
+                submit: "Recipe created Succesfully",
             };
 
         case "GET_DIETS":
             return {
                 ...state,
                 diets: action.payload,
+            };
+
+        case "GET_RECIPE_DETAIL":
+            return {
+                ...state,
+                detail: action.payload,
             };
 
         default:

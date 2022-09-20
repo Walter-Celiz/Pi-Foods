@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function LandingPage() {
+export default function AboutMe() {
     return (
         <div>
-            <h2>Bienvenidos</h2>
             <Link to="/home">
-                <button>Ingresar</button>
+                <button>Home</button>
             </Link>
+            <p>About Me</p>
         </div>
     );
 }

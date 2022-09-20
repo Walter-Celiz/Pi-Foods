@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
     getRecipes,
@@ -65,7 +65,7 @@ export default function Home() {
         <div>
             <div>
                 <h2>logo foods</h2>
-                <Link to="/recipes">Create/Edit</Link>
+                <Link to="/recipes/create">Create/Edit</Link>
                 <Link to="/aboutme">About Me</Link>
             </div>
 
@@ -97,8 +97,7 @@ export default function Home() {
                 </div>
 
                 <div>
-                    <select
-                        onChange={(e) => handleOrderByScore(e)}>
+                    <select onChange={(e) => handleOrderByScore(e)}>
                         <option value="ascd">Ascending Score</option>
                         <option value="desc">Descending Score</option>
                     </select>
@@ -113,7 +112,10 @@ export default function Home() {
 
                 <div>
                     <button
-                        onClick={(e) => { handleClick(e) }}>
+                        onClick={(e) => {
+                            handleClick(e);
+                        }}
+                    >
                         Clear Filters
                     </button>
                 </div>
@@ -123,8 +125,8 @@ export default function Home() {
                 {currentRecipe?.map((recipe) => {
                     return (
                         <Card
+                            id={recipe.id}
                             key={recipe.id}
-                            // id={recipe.id}
                             name={recipe.name}
                             image={recipe.image}
                             diets={recipe.diets}
