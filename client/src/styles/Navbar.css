@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Frijole&display=swap");
+
+.navbarContainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar__link {
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: "Frijole", cursive;
+    color: white;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+    text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+}
+
+
+.navbar__link:hover,
+.navbar__link:focus {
+    color: #d64c3f;
+    background-size: 100% 2px;
+}

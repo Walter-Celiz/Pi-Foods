@@ -1,0 +1,7 @@
+.homeContainer {
+    background: url("https://live.staticflickr.com/65535/48692486086_30cc51ea23_b.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+}

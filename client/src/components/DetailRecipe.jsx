@@ -1,9 +1,11 @@
 import { React } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import Navbar from "./Navbar"
 
 import getRecipeDetail from "../redux/actions";
+
+import "../styles/DetailRecipe.css"
 
 export default function RecipeDetail(props) {
     const dispatch = useDispatch();
@@ -16,25 +18,35 @@ export default function RecipeDetail(props) {
     }, [dispatch]);
 
     return (
-        <div>
-            <Link to="/home">
-                <button>Home</button>
-            </Link>
+        <div className="mainContainer">
+            <Navbar />
             {recipeDetail[0] ? (
-                <div>
-                    <img src={recipeDetail[0].image} alt={recipeDetail[0].name} />
-                    <h2>{recipeDetail[0].name}</h2>
-                    <p>Health Score: {recipeDetail[0].healthScore}</p>
-                    <p>Summary:</p>
-                    <p>{recipeDetail[0].summary}</p>
-                    {recipeDetail[0].steps ? (
+                <div className="detailContainer">
+                    <div className="detail">
                         <div>
-                            <span>Step by step: </span>
-                            <span>{recipeDetail[0].steps}</span>
+                            <h2 className="detail__h2">{recipeDetail[0].name}</h2>
+                            <p className="detail__p">Health Score: {recipeDetail[0].healthScore}</p>
+                            <img
+                                src={recipeDetail[0].image} alt={recipeDetail[0].name}
+                                className="detail__img"
+                            />
                         </div>
-                    ) : null}
-                    <p>Diets:</p>
-                    <p>{recipeDetail[0].diets}</p>
+
+                        <div className="summary">
+                            <h3 className="summary__h3">Summary:</h3>
+                            <p className="summary__p">{recipeDetail[0].summary}</p>
+                        </div>
+
+                        <div className="diets">
+                            <h3 className="diets__h3">Diets:</h3>
+                            <p className="diets__p">{recipeDetail[0].diets}</p>
+                        </div>
+
+                        <div className="steps">
+                            <h3 className="steps__h3">Steps:</h3>
+                            <p className="steps__p">{recipeDetail[0].steps}</p>
+                        </div>
+                    </div>
                 </div>
             ) : (
                 <h3>Loading...</h3>

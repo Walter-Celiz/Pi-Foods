@@ -20,6 +20,9 @@ const getApiRecipes = async () => {
                 healthScore,
                 image,
                 summary: recipe.summary.replace(/<[^>]*>?/g, ""),
+                steps: recipe.analyzedInstructions[0]?.steps.map((e) => {
+                    return e.step;
+                }),
                 diets: recipe.diets.join(" ")
             }
         })

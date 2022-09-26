@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/Paginate.css"
 
 export default function Paginate({ recipesPerPage, allRecipes, paginated }) {
     const pageNumbers = [];
@@ -6,15 +7,23 @@ export default function Paginate({ recipesPerPage, allRecipes, paginated }) {
         //redondea todos los personajes / cantidad de personajes por pagina
         pageNumbers.push(i);
     }
+
     return (
-        <ul>
-            {pageNumbers.map((number) => {
-                return (
-                    <li key={number} onClick={() => paginated(number)} id={number}>
-                        <span style={{ cursor: "pointer" }}>{number}</span>
-                    </li>
-                );
-            })}
-        </ul>
+        <div className="paginateContainer">
+            <ul className="paginate__ul">
+                {pageNumbers.map((number) => {
+                    return (
+                        <li
+                            key={number}
+                            onClick={() => paginated(number)}
+                            id={number}
+                            className="paginate__li"
+                        >
+                            <span>{number}</span>
+                        </li>
+                    );
+                })}
+            </ul>
+        </div>
     );
 }

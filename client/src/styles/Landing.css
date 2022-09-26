@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Frijole&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.landingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    text-align: center;
+    background: url("https://imgs.search.brave.com/17T_KJjlGlnR8zKxcA2m1aKNu5Xd68Er1k5fF0mRrM8/rs:fit:800:600:1/g:ce/aHR0cDovL3R1c2lt/YWdlbmVzZGUuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE0/LzExL2ltYWdlbmVz/LWRlLWNvbWlkYS0x/LmpwZw");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: cover;
+    height: 80vh;
+    margin-top: 9vh;
+    margin-bottom: 15vh;
+}
+
+.landingContainer__h2 {
+    font-family: "Frijole", cursive;
+    color: white;
+    font-size: 5rem;
+    text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+}
+
+.landingContainer__button {
+    text-decoration: none;
+    background-color: #d64c3f;
+    color: black;
+    font-size: 2.3rem;
+    cursor: pointer;
+    border: 2px black solid;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-family: "Lato", sans-serif;
+}
+
+.landingContainer__button:hover {
+    background: black;
+    color: white;
+    border: 1px white solid;
+}

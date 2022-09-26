@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import {
     getRecipes,
     filterRecipeByDiet,
@@ -7,10 +8,15 @@ import {
     orderByName,
     orderByScore,
 } from "../redux/actions";
-import { Link } from "react-router-dom";
+
 import Card from "./Card";
 import Paginate from "./Paginate";
 import SearchBar from "./SearchBar";
+import Navbar from "./Navbar";
+
+import "../styles/Home.css"
+import "../styles/Filters.css"
+
 
 export default function Home() {
     const dispatch = useDispatch();
@@ -62,66 +68,66 @@ export default function Home() {
     }
 
     return (
-        <div>
-            <div>
-                <Link to="/home">
-                    <h2>logo foods</h2>
-                </Link>
-                <Link to="/home">Home</Link>
-                <Link to="/recipes/create">Create/Edit</Link>
-                <Link to="/aboutme">About Me</Link>
-            </div>
+        <div className="homeContainer">
+            <Navbar />
 
-            <div>
-                <div>
-                    <select onChange={(e) => handleOrderByName(e)}>
-                        <option value="asc"> A-Z </option>
-                        <option value="des"> Z-A </option>
+            <div className="filterContainer">
+                <div className="filters__order">
+                    <select
+                        className="filters__select filters__select--mod"
+                        onChange={(e) => handleOrderByName(e)}
+                    >
+                        <option value="asc" className="divFilters__option"> A-Z </option>
+                        <option value="des" className="divFilters__option"> Z-A </option>
+                    </select>
+
+                    <select
+                        className="filters__select filters__select--mod filters__select--margin"
+                        onChange={(e) => handleOrderByScore(e)}
+                    >
+                        <option value="ascd" className="filters__option">Ascending Score</option>
+                        <option value="desc" className="filters__option">Descending Score</option>
                     </select>
                 </div>
 
-                <div>
-                    <select onChange={(e) => handleOrderByScore(e)}>
-                        <option value="ascd">Ascending Score</option>
-                        <option value="desc">Descending Score</option>
-                    </select>
-                </div>
-
-                <div>
+                <div className="filters__searchBar">
                     <SearchBar />
                 </div>
 
-                <div>
-                    <select onChange={(e) => handleFilterByDiet(e)}>
-                        <option value="gluten free">Glutten Free</option>
-                        <option value="dairy free">Dairy Free</option>
-                        <option value="lacto ovo vegetarian">Lacto ovo vegetarian</option>
-                        <option value="vegan">Vegan</option>
-                        <option value="paleolithic">Paleolithic</option>
-                        <option value="primal">Primal</option>
-                        <option value="whole 30">Whole 30</option>
-                        <option value="pescaterian">Pescaterian</option>
-                        <option value="ketogenic">Ketogenic</option>
-                        <option value="fodmap friendly">Fodmap Friendly</option>
-                    </select>
-                </div>
-
-                <div>
-                    <select onChange={(e) => handleFilterCreated(e)}>
-                        <option value="all">All</option>
-                        <option value="created">Created</option>
-                    </select>
-                </div>
-
-                <div>
-                    <button
-                        onClick={(e) => {
-                            handleClick(e);
-                        }}
+                <div className="filters__types">
+                    <select
+                        className="filters__select"
+                        onChange={(e) => handleFilterByDiet(e)}
                     >
-                        Clear Filters
-                    </button>
+                        <option value="gluten free" className="filters__option">Glutten Free</option>
+                        <option value="dairy free" className="filters__option">Dairy Free</option>
+                        <option value="lacto ovo vegetarian" className="filters__option">Lacto ovo vegetarian</option>
+                        <option value="vegan" className="filters__option">Vegan</option>
+                        <option value="paleolithic" className="filters__option">Paleolithic</option>
+                        <option value="primal" className="filters__option">Primal</option>
+                        <option value="whole 30" className="filters__option">Whole 30</option>
+                        <option value="pescaterian" className="filters__option">Pescaterian</option>
+                        <option value="ketogenic" className="filters__option">Ketogenic</option>
+                        <option value="fodmap friendly" className="filters__option">Fodmap Friendly</option>
+                    </select>
+
+                    <select
+                        className="filters__select filters__select--mod filters__select--margin"
+                        onChange={(e) => handleFilterCreated(e)}
+                    >
+                        <option value="all" className="filters__option">All</option>
+                        <option value="created" className="filters__option">Created</option>
+                    </select>
                 </div>
+            </div>
+
+            <div className="clearFilter">
+                <button
+                    onClick={(e) => { handleClick(e) }}
+                    className="clearFilter__button"
+                >
+                    Clear Filters
+                </button>
             </div>
 
             <div>

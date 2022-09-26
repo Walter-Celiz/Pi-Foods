@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.mainContainer {
+    background: url("https://i.pinimg.com/originals/d1/44/28/d144283cc161e38fa98c402e4a336a0b.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+}
+
+.detailContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.detail__h2 {
+    color: white;
+    font-family: 'Righteous', cursive;
+    text-shadow: -1px -1px 0px #000, 1px 1px 0px #000, -1px 1px 0px #000, 1px -1px 0px #000;
+    margin-bottom: 2rem;
+}
+
+.detail__img {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    max-width: 370px;
+    max-height: 300px;
+    margin-bottom: 2rem;
+}
+
+.detail__p {
+    color: rgb(246, 246, 134);
+    font-family: sans-serif;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.summary {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: auto;
+}
+
+.summary__h3 {
+    color: white;
+    font-family: sans-serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.summary__p {
+    color: white;
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+.diets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.diets__h3 {
+    color: #e25447;
+    font-family: sans-serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.diets__p {
+    color: #e25447;
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 300px;
+    height: auto;
+}
+
+.steps__h3 {
+    color: #80e677;
+    font-family: sans-serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.steps__p {
+    color: white;
+    font-family: sans-serif;
+    font-size: 1rem;
+}
