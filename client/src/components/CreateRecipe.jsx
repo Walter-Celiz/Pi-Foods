@@ -97,7 +97,7 @@ export default function CreateRecipe() {
                                 onChange={(e) => handleChange(e)}
                                 className="create__form__input"
                             />
-                            {errors.name && <h5 className="error">{errors.name}</h5>}
+                            {errors.name && <h5 className="create__error">{errors.name}</h5>}
                         </div>
 
                         <div className="create__divHealthScore">
@@ -112,7 +112,7 @@ export default function CreateRecipe() {
                                 className="create__form__input"
                             />
                             {errors.healthScore && (
-                                <h5 className="error">{errors.healthScore}</h5>
+                                <h5 className="create__error">{errors.healthScore}</h5>
                             )}
                         </div>
 
@@ -127,7 +127,7 @@ export default function CreateRecipe() {
                                 onChange={(e) => handleChange(e)}
                                 className="create__form__input"
                             />
-                            {errors.image && <h5 className="error">{errors.image}</h5>}
+                            {errors.image && <h5 className="create__error">{errors.image}</h5>}
                         </div>
 
                         <div className="create__divSummary">
@@ -141,7 +141,7 @@ export default function CreateRecipe() {
                                 onChange={(e) => handleChange(e)}
                                 className="create__form__input"
                             />
-                            {errors.summary && <h5 className="error">{errors.summary}</h5>}
+                            {errors.summary && <h5 className="create__error">{errors.summary}</h5>}
                         </div>
 
                         <div className="create__divSteps">
@@ -155,7 +155,7 @@ export default function CreateRecipe() {
                                 onChange={(e) => handleChange(e)}
                                 className="create__form__input"
                             />
-                            {errors.steps && <h5 className="error">{errors.steps}</h5>}
+                            {errors.steps && <h5 className="create__error">{errors.steps}</h5>}
                         </div>
 
                         <div className="create__divDiets">
