@@ -5,7 +5,7 @@ import "../styles/Card.css"
 export default function Card({ id, name, healthScore, image, diets }) {
     return (
         <div className="card__container">
-            <div className="card__container2">
+            <div className="card">
                 <p className="card__p">Health Score: {healthScore}</p>
                 <div>
                     <Link to={`/recipes/${id}`}>

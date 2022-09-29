@@ -12,18 +12,17 @@ const getApiRecipes = async () => {
         // );
         // const recipeInfo = await apiCall.data.results.map(recipe => {
         const recipeInfo = API.results.map(recipe => {
-            const { id, summary, healthScore, image } = recipe;
+            const { id, healthScore, image } = recipe;
             return {
                 id,
                 name: recipe.title,
-                summary,
                 healthScore,
                 image,
                 summary: recipe.summary.replace(/<[^>]*>?/g, ""),
                 steps: recipe.analyzedInstructions[0]?.steps.map((e) => {
                     return e.step;
                 }),
-                diets: recipe.diets.join(" ")
+                diets: recipe.diets.join(", ")
             }
         })
         return recipeInfo
@@ -49,10 +48,31 @@ const getDbRecipes = async () => {
     }
 };
 
+const processedDbRecipes = async () => {
+    try {
+        const dataDb = await getDbRecipes();
+        const obj = dataDb.map(recipe => ({
+            id: recipe.id,
+            name: recipe.name,
+            healthScore: recipe.healthScore,
+            image: recipe.image,
+            summary: recipe.summary,
+            steps: recipe.steps,
+            diets: recipe.diets.map(rec => { return rec.name }).join(", "),
+            createdInDb: recipe.createdInDb
+        }))
+        return obj;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+
+
 const getRecipes = async () => {
     try {
         const apiInfo = await getApiRecipes();
-        const bdInfo = await getDbRecipes();
+        const bdInfo = await processedDbRecipes();
         const allInfo = apiInfo.concat(bdInfo);
         return allInfo;
     } catch (error) {

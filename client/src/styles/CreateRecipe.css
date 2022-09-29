@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+.createMain {
+    background: url("https://t3.ftcdn.net/jpg/02/54/20/88/360_F_254208823_NXcV5RCcWJ1vgSuWjhPqIpPmqXIyBrDO.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.createContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.create {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.create__h3 {
+    color: #e25447;
+    margin-bottom: 1.4rem;
+    font-size: 1.7rem;
+}
+
+.create__form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.create__form__input {
+    border-radius: 10px;
+    margin-left: 0.4rem;
+}
+
+.create__divName {
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.create__divName__label {
+    font-size: 1.4rem;
+}
+
+.create__divName__label-margin {
+    margin-left: 3.5rem;
+}
+
+.create__divHealthScore {
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.create__divHealScore__label-margin {
+    margin-left: 0.1rem;
+}
+
+.create__divImage {
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.create__divImage__label-margin {
+    margin-left: 3.5rem;
+}
+
+.create__divSummary {
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.create__divSummary__label-margin {
+    margin-left: 1.4rem;
+}
+
+.create__divSteps {
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.create__divDiets {
+    color: white;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.create__divDiets__h3 {
+    color: rgb(246, 246, 134);
+    margin-bottom: 1.5rem;
+    font-size: 1.7rem;
+    width: 375px;
+}
+
+.create__divDiets__span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    margin-left: 6.8rem;
+    font-size: 1.4rem;
+}
+
+.create__divDiets__input {
+    margin-right: 0.5rem;
+    margin-top: 0.3rem;
+    accent-color: #80e677;
+}
+
+.create__button {
+    background: #e25447;
+    color: white;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 0px 0px 0px #000, 0px 0px 0px #000, 1px 1px 1px #000, 2px 2px 2px #000;
+    font-size: 1.4rem;
+}

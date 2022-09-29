@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Frijole&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
 .landingContainer {
     display: flex;
@@ -35,7 +35,7 @@
     border: 2px black solid;
     border-radius: 8px;
     margin-top: 1rem;
-    font-family: "Lato", sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .landingContainer__button:hover {

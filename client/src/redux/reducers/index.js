@@ -1,4 +1,3 @@
-import axios from "axios";
 
 const initialState = {
     recipes: [],
@@ -48,10 +47,11 @@ function rootReducer(state = initialState, action) {
             };
 
         case "FILTER_CREATED":
-            const createdFilter =
-                action.payload === "created"
-                    ? state.allRecipes.filter((recipe) => recipe.createdInDb)
-                    : state.allRecipes.filter((recipe) => !recipe.createdInDb);
+            const allRecipes2 = state.allRecipes;
+            const createdFilter = action.payload === "created"
+                ? allRecipes2.filter((recipe) => recipe.createdInDb)
+                : allRecipes2.filter((recipe) => !recipe.createdInDb);
+            console.log(createdFilter)
             return {
                 ...state,
                 recipes: action.payload === "all" ? state.allRecipes : createdFilter,
@@ -93,16 +93,9 @@ function rootReducer(state = initialState, action) {
                 recipesLoaded: sortedRecipesHealthScore,
             };
 
-        // case "POST_RECIPE":
-        //     return {
-        //         ...state,
-        //     };
-
         case "POST_RECIPE":
-            axios.post("http://localhost:3001/recipe", action.payload);
             return {
                 ...state,
-                submit: "Recipe created Succesfully",
             };
 
         case "GET_DIETS":

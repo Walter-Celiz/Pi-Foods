@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 
 .mainContainer {
     background: url("https://i.pinimg.com/originals/d1/44/28/d144283cc161e38fa98c402e4a336a0b.jpg");
@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
 }
 
 .detail {
@@ -24,9 +25,9 @@
 
 .detail__h2 {
     color: white;
-    font-family: 'Righteous', cursive;
-    text-shadow: -1px -1px 0px #000, 1px 1px 0px #000, -1px 1px 0px #000, 1px -1px 0px #000;
-    margin-bottom: 2rem;
+    /* text-shadow: -1px -1px 0px #000, 1px 1px 0px #000, -1px 1px 0px #000, 1px -1px 0px #000; */
+    margin-bottom: 1.5rem;
+    font-size: 1.7rem;
 }
 
 .detail__img {
@@ -35,14 +36,13 @@
     height: 100%;
     max-width: 370px;
     max-height: 300px;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 }
 
 .detail__p {
     color: rgb(246, 246, 134);
-    font-family: sans-serif;
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
 }
 
 .summary {
@@ -55,15 +55,13 @@
 
 .summary__h3 {
     color: white;
-    font-family: sans-serif;
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin-bottom: 0.5rem;
 }
 
 .summary__p {
     color: white;
-    font-family: sans-serif;
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
 
 .diets {
@@ -77,15 +75,13 @@
 
 .diets__h3 {
     color: #e25447;
-    font-family: sans-serif;
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 0.5rem;
 }
 
 .diets__p {
     color: #e25447;
-    font-family: sans-serif;
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
 
 .steps {
@@ -100,14 +96,13 @@
 }
 
 .steps__h3 {
-    color: #80e677;
-    font-family: sans-serif;
-    font-size: 2rem;
+    color: #a1e49b;
+    font-size: 1.6rem;
     margin-bottom: 0.5rem;
 }
 
 .steps__p {
-    color: white;
-    font-family: sans-serif;
+    color: #a1e49b;
     font-size: 1rem;
+    font-size: 1.4rem;
 }

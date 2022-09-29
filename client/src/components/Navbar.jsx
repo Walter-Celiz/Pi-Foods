@@ -6,16 +6,14 @@ export default function Navbar() {
     return (
         <div className="navbarContainer">
             <div className="navbar">
-                <div>
-                </div>
-                <div>
+                <div className="navbar__div">
                     <Link className="navbar__link" to="/home">
                         Home
                     </Link>
                 </div>
-                <div>
+                <div className="navbar__div">
                     <Link className="navbar__link" to="/recipes/create">
-                        Create / Edit
+                        Create
                     </Link>
                 </div>
             </div>

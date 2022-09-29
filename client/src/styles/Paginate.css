@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
 .paginateContainer {
     display: flex;
     justify-content: center;
     margin: 2rem 0;
+    font-family: "Source Sans Pro", sans-serif;
 }
 
 .paginate__ul {
@@ -10,6 +13,7 @@
     border-radius: 15px;
     padding: 0 1rem;
     cursor: pointer;
+    margin-bottom: 2rem;
 }
 
 .paginate__li {
@@ -17,7 +21,6 @@
     font-size: 2rem;
     list-style: none;
     margin: 0 0.1rem;
-    font-family: sans-serif;
 }
 
 .paginate__li :hover {

@@ -7,11 +7,17 @@
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(6, 6, 6, 0.2));
 }
 
 .navbar {
     display: flex;
     flex-direction: column;
+}
+
+.navbar__div {
+    margin-bottom: 0.5rem;
 }
 
 .navbar__link {

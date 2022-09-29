@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const setHeaders = require("./utils/middlewares/setHeaders");
 const routes = require("./routes/index.js");
+const cors = require('cors');
 const errorHandler = require("./utils/middlewares/errorHandler");
 
 require("./db.js");
@@ -19,6 +20,7 @@ server.use(morgan("dev"));
 server.use(setHeaders);
 
 server.use("/", routes);
+server.use(cors({ origin: true, credentials: true }));
 
 // Error catching endware.
 server.use(errorHandler);

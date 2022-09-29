@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
 .filterContainer {
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .filters__order {
@@ -10,16 +13,6 @@
     justify-content: center;
     margin-top: 2rem;
     margin-bottom: 0.6rem;
-}
-
-.filters__select--mod {
-    padding: 0 1rem;
-    font-size: 1rem;
-}
-
-.filters__select--mod2 {
-    padding: 0 0.3rem;
-    font-size: 1rem;
 }
 
 .filters__searchBar {
@@ -44,10 +37,9 @@
     appearance: none;
     text-align: center;
     cursor: pointer;
-    font-family: sans-serif;
     padding: 0.2rem 0.5rem;
+    font-size: 1rem;
 }
-
 
 .filters__select--margin {
     margin: 0 0.6rem;
@@ -67,8 +59,9 @@
     cursor: pointer;
     font-size: 1rem;
     margin-bottom: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .filters__option {
-    background: rgbargba(36, 35, 33);
+    background: rgba(36, 35, 33);
 }

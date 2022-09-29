@@ -74,7 +74,7 @@ export default function Home() {
             <div className="filterContainer">
                 <div className="filters__order">
                     <select
-                        className="filters__select filters__select--mod"
+                        className="filters__select "
                         onChange={(e) => handleOrderByName(e)}
                     >
                         <option value="asc" className="divFilters__option"> A-Z </option>
@@ -82,7 +82,7 @@ export default function Home() {
                     </select>
 
                     <select
-                        className="filters__select filters__select--mod filters__select--margin"
+                        className="filters__select  filters__select--margin"
                         onChange={(e) => handleOrderByScore(e)}
                     >
                         <option value="ascd" className="filters__option">Ascending Score</option>
@@ -112,7 +112,7 @@ export default function Home() {
                     </select>
 
                     <select
-                        className="filters__select filters__select--mod filters__select--margin"
+                        className="filters__select filters__select--margin"
                         onChange={(e) => handleFilterCreated(e)}
                     >
                         <option value="all" className="filters__option">All</option>
