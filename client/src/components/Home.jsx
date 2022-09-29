@@ -14,13 +14,12 @@ import Paginate from "./Paginate";
 import SearchBar from "./SearchBar";
 import Navbar from "./Navbar";
 
-import "../styles/Home.css"
-import "../styles/Filters.css"
-
+import "../styles/Home.css";
+import "../styles/Filters.css";
 
 export default function Home() {
     const dispatch = useDispatch();
-    //arreglo del estado
+    //state array
     const allRecipes = useSelector((state) => state.recipes);
     // eslint-disable-next-line no-unused-vars
     const [order, setOrder] = useState("");
@@ -77,16 +76,26 @@ export default function Home() {
                         className="filters__select "
                         onChange={(e) => handleOrderByName(e)}
                     >
-                        <option value="asc" className="divFilters__option"> A-Z </option>
-                        <option value="des" className="divFilters__option"> Z-A </option>
+                        <option value="asc" className="divFilters__option">
+                            {" "}
+                            A-Z{" "}
+                        </option>
+                        <option value="des" className="divFilters__option">
+                            {" "}
+                            Z-A{" "}
+                        </option>
                     </select>
 
                     <select
                         className="filters__select  filters__select--margin"
                         onChange={(e) => handleOrderByScore(e)}
                     >
-                        <option value="ascd" className="filters__option">Ascending Score</option>
-                        <option value="desc" className="filters__option">Descending Score</option>
+                        <option value="ascd" className="filters__option">
+                            Ascending Score
+                        </option>
+                        <option value="desc" className="filters__option">
+                            Descending Score
+                        </option>
                     </select>
                 </div>
 
@@ -99,31 +108,57 @@ export default function Home() {
                         className="filters__select"
                         onChange={(e) => handleFilterByDiet(e)}
                     >
-                        <option value="gluten free" className="filters__option">Glutten Free</option>
-                        <option value="dairy free" className="filters__option">Dairy Free</option>
-                        <option value="lacto ovo vegetarian" className="filters__option">Lacto ovo vegetarian</option>
-                        <option value="vegan" className="filters__option">Vegan</option>
-                        <option value="paleolithic" className="filters__option">Paleolithic</option>
-                        <option value="primal" className="filters__option">Primal</option>
-                        <option value="whole 30" className="filters__option">Whole 30</option>
-                        <option value="pescaterian" className="filters__option">Pescaterian</option>
-                        <option value="ketogenic" className="filters__option">Ketogenic</option>
-                        <option value="fodmap friendly" className="filters__option">Fodmap Friendly</option>
+                        <option value="gluten free" className="filters__option">
+                            Glutten Free
+                        </option>
+                        <option value="dairy free" className="filters__option">
+                            Dairy Free
+                        </option>
+                        <option value="lacto ovo vegetarian" className="filters__option">
+                            Lacto ovo vegetarian
+                        </option>
+                        <option value="vegan" className="filters__option">
+                            Vegan
+                        </option>
+                        <option value="paleolithic" className="filters__option">
+                            Paleolithic
+                        </option>
+                        <option value="primal" className="filters__option">
+                            Primal
+                        </option>
+                        <option value="whole 30" className="filters__option">
+                            Whole 30
+                        </option>
+                        <option value="pescaterian" className="filters__option">
+                            Pescaterian
+                        </option>
+                        <option value="ketogenic" className="filters__option">
+                            Ketogenic
+                        </option>
+                        <option value="fodmap friendly" className="filters__option">
+                            Fodmap Friendly
+                        </option>
                     </select>
 
                     <select
                         className="filters__select filters__select--margin"
                         onChange={(e) => handleFilterCreated(e)}
                     >
-                        <option value="all" className="filters__option">All</option>
-                        <option value="created" className="filters__option">Created</option>
+                        <option value="all" className="filters__option">
+                            All
+                        </option>
+                        <option value="created" className="filters__option">
+                            Created
+                        </option>
                     </select>
                 </div>
             </div>
 
             <div className="clearFilter">
                 <button
-                    onClick={(e) => { handleClick(e) }}
+                    onClick={(e) => {
+                        handleClick(e);
+                    }}
                     className="clearFilter__button"
                 >
                     Clear Filters

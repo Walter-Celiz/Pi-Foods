@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { postRecipe, getDiets } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import Navbar from "./Navbar"
+import Navbar from "./Navbar";
 
-import "../styles/CreateRecipe.css"
+import "../styles/CreateRecipe.css";
 
 function validate(input) {
     let errors = {};
@@ -69,7 +69,7 @@ export default function CreateRecipe() {
             steps: "",
             diets: [],
         });
-        history.push("/home"); //hook para redirigir
+        history.push("/home"); //hook to redirect
     }
 
     useEffect(() => {
@@ -79,20 +79,17 @@ export default function CreateRecipe() {
 
     return (
         <div className="createMain">
-
             <Navbar />
 
             <div className="createContainer">
                 <div className="create">
-
                     <h3 className="create__h3">Create your own recipe!</h3>
 
-                    <form
-                        onSubmit={(e) => handleSubmit(e)}
-                        className="create__form"
-                    >
+                    <form onSubmit={(e) => handleSubmit(e)} className="create__form">
                         <div className="create__divName">
-                            <label className="create__divName__label create__divName__label-margin">Name:</label>
+                            <label className="create__divName__label create__divName__label-margin">
+                                Name:
+                            </label>
                             <input
                                 type="text"
                                 name="name"
@@ -104,7 +101,9 @@ export default function CreateRecipe() {
                         </div>
 
                         <div className="create__divHealthScore">
-                            <label className="create__divName__label create__divHealScore__label-margin">healthScore:</label>
+                            <label className="create__divName__label create__divHealScore__label-margin">
+                                healthScore:
+                            </label>
                             <input
                                 type="number"
                                 name="healthScore"
@@ -118,7 +117,9 @@ export default function CreateRecipe() {
                         </div>
 
                         <div className="create__divImage">
-                            <label className="create__divName__label create__divImage__label-margin">Image:</label>
+                            <label className="create__divName__label create__divImage__label-margin">
+                                Image:
+                            </label>
                             <input
                                 type="text"
                                 name="image"
@@ -130,7 +131,9 @@ export default function CreateRecipe() {
                         </div>
 
                         <div className="create__divSummary">
-                            <label className="create__divName__label create__divSummary__label-margin">Summary:</label>
+                            <label className="create__divName__label create__divSummary__label-margin">
+                                Summary:
+                            </label>
                             <input
                                 type="text"
                                 name="summary"
@@ -142,7 +145,9 @@ export default function CreateRecipe() {
                         </div>
 
                         <div className="create__divSteps">
-                            <label className="create__divName__label create__divSteps__label-margin">Step by step:</label>
+                            <label className="create__divName__label create__divSteps__label-margin">
+                                Step by step:
+                            </label>
                             <input
                                 type="text"
                                 name="steps"
@@ -154,7 +159,9 @@ export default function CreateRecipe() {
                         </div>
 
                         <div className="create__divDiets">
-                            <h3 className="create__divDiets__h3">Select which diet it belongs to</h3>
+                            <h3 className="create__divDiets__h3">
+                                Select which diet it belongs to
+                            </h3>
                             {diets.map((diet) => {
                                 return (
                                     <span key={`${diet.id}`} className="create__divDiets__span">
@@ -172,10 +179,7 @@ export default function CreateRecipe() {
                         </div>
 
                         <div>
-                            <button
-                                type="submit"
-                                className="create__button"
-                            >
+                            <button type="submit" className="create__button">
                                 Create
                             </button>
                         </div>

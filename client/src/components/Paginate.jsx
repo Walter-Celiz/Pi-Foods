@@ -4,7 +4,7 @@ import "../styles/Paginate.css"
 export default function Paginate({ recipesPerPage, allRecipes, paginated }) {
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(allRecipes / recipesPerPage); i++) {
-        //redondea todos los personajes / cantidad de personajes por pagina
+        //round all characters / number of characters per page
         pageNumbers.push(i);
     }
 

@@ -1,11 +1,11 @@
 import { React } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Navbar from "./Navbar"
+import Navbar from "./Navbar";
 
 import getRecipeDetail from "../redux/actions";
 
-import "../styles/DetailRecipe.css"
+import "../styles/DetailRecipe.css";
 
 export default function RecipeDetail(props) {
     const dispatch = useDispatch();
@@ -25,9 +25,12 @@ export default function RecipeDetail(props) {
                     <div className="detail">
                         <div>
                             <h2 className="detail__h2">{recipeDetail[0].name}</h2>
-                            <p className="detail__p">Health Score: {recipeDetail[0].healthScore}</p>
+                            <p className="detail__p">
+                                Health Score: {recipeDetail[0].healthScore}
+                            </p>
                             <img
-                                src={recipeDetail[0].image} alt={recipeDetail[0].name}
+                                src={recipeDetail[0].image}
+                                alt={recipeDetail[0].name}
                                 className="detail__img"
                             />
                         </div>

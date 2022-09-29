@@ -43,42 +43,19 @@ export function getDiets() {
 export function postRecipe(body) {
     return async function (dispatch) {
         try {
-            const response = await axios.post(`http://localhost:3001/recipes/create`, body)
+            const response = await axios.post(
+                `http://localhost:3001/recipes/create`,
+                body
+            );
             return dispatch({
                 type: "POST_RECIPE",
-                payload: response.data
+                payload: response.data,
             });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
+    };
 }
-
-// export function postRecipe(body) {
-//     return async function (dispatch) {
-//         try {
-//             const response = await axios.post(
-//                 ("http://localhost:3001/recipes/create", body)
-//             );
-//             return dispatch({
-//                 type: "POST_RECIPE",
-//                 payload: response.data
-//             })
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     };
-// }
-
-// export function postRecipe(payload) {
-//     //accion para crear una nueva receta
-//     return {
-//         type: "POST_RECIPE",
-//         payload,
-//     };
-// }
-
-
 
 export function filterRecipeByDiet(payload) {
     return {
@@ -121,3 +98,27 @@ export default function getRecipeDetail(id) {
         }
     };
 }
+
+// export function postRecipe(body) {
+//     return async function (dispatch) {
+//         try {
+//             const response = await axios.post(
+//                 ("http://localhost:3001/recipes/create", body)
+//             );
+//             return dispatch({
+//                 type: "POST_RECIPE",
+//                 payload: response.data
+//             })
+//         } catch (error) {
+//             console.log(error);
+//         }
+//     };
+// }
+
+// export function postRecipe(payload) {
+//     //accion para crear una nueva receta
+//     return {
+//         type: "POST_RECIPE",
+//         payload,
+//     };
+// }

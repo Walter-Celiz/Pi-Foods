@@ -2,8 +2,7 @@
 // require('dotenv').config()
 // const { API_KEY } = process.env;
 const { Recipe, Diet } = require("../db");
-const API = require("../api.json")
-
+const API = require("../api.json");
 
 const getApiRecipes = async () => {
     try {
@@ -11,7 +10,7 @@ const getApiRecipes = async () => {
         //     `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=300`
         // );
         // const recipeInfo = await apiCall.data.results.map(recipe => {
-        const recipeInfo = API.results.map(recipe => {
+        const recipeInfo = API.results.map((recipe) => {
             const { id, healthScore, image } = recipe;
             return {
                 id,
@@ -22,12 +21,12 @@ const getApiRecipes = async () => {
                 steps: recipe.analyzedInstructions[0]?.steps.map((e) => {
                     return e.step;
                 }),
-                diets: recipe.diets.join(", ")
-            }
-        })
-        return recipeInfo
+                diets: recipe.diets.join(", "),
+            };
+        });
+        return recipeInfo;
     } catch (error) {
-        console.log(error + " #getApiInfo fail!!! 🔴🔴🔴🔴")
+        console.log(error + " #getApiInfo fail!!! 🔴🔴🔴🔴");
     }
 };
 
@@ -44,30 +43,32 @@ const getDbRecipes = async () => {
         });
         return getDBinfo;
     } catch (error) {
-        console.log(error + " #getDBInfo fail!!! 🔴🔴🔴🔴")
+        console.log(error + " #getDBInfo fail!!! 🔴🔴🔴🔴");
     }
 };
 
 const processedDbRecipes = async () => {
     try {
         const dataDb = await getDbRecipes();
-        const obj = dataDb.map(recipe => ({
+        const obj = dataDb.map((recipe) => ({
             id: recipe.id,
             name: recipe.name,
             healthScore: recipe.healthScore,
             image: recipe.image,
             summary: recipe.summary,
             steps: recipe.steps,
-            diets: recipe.diets.map(rec => { return rec.name }).join(", "),
-            createdInDb: recipe.createdInDb
-        }))
+            diets: recipe.diets
+                .map((rec) => {
+                    return rec.name;
+                })
+                .join(", "),
+            createdInDb: recipe.createdInDb,
+        }));
         return obj;
     } catch (err) {
         console.log(err);
     }
-}
-
-
+};
 
 const getRecipes = async () => {
     try {
@@ -76,7 +77,7 @@ const getRecipes = async () => {
         const allInfo = apiInfo.concat(bdInfo);
         return allInfo;
     } catch (error) {
-        console.log(error + " #getAllInfo fail!!! 🔴🔴🔴🔴")
+        console.log(error + " #getAllInfo fail!!! 🔴🔴🔴🔴");
     }
 };
 
@@ -87,8 +88,8 @@ const getAllRecipesOrName = async (req, res) => {
         let allRecipes = await getRecipes();
         const { name } = req.query;
         if (name) {
-            let recipeName = await allRecipes.filter(
-                (obj) => obj.name.toLowerCase().includes(name.toLowerCase())
+            let recipeName = await allRecipes.filter((obj) =>
+                obj.name.toLowerCase().includes(name.toLowerCase())
             );
             recipeName.length
                 ? res.status(200).send(recipeName)
@@ -118,15 +119,8 @@ const getRecipeById = async (req, res) => {
 
 const createRecipe = async (req, res) => {
     try {
-        const {
-            name,
-            summary,
-            healthScore,
-            image,
-            steps,
-            createdInDb,
-            diets
-        } = req.body
+        const { name, summary, healthScore, image, steps, createdInDb, diets } =
+            req.body;
 
         const recipeCreated = await Recipe.create({
             name,
@@ -136,10 +130,10 @@ const createRecipe = async (req, res) => {
             steps,
             createdInDb,
             diets,
-        })
+        });
 
-        recipeCreated.addDiet(diets)
-        res.status(200).send(" Recipe created!!! 🟢🟢🟢🟢")
+        recipeCreated.addDiet(diets);
+        res.status(200).send(" Recipe created!!! 🟢🟢🟢🟢");
         // .then((recipe) => recipe.addDiet(diets))
         // .then(res.send("Recipe created!!! 🟢🟢🟢🟢"))
     } catch (error) {
@@ -150,11 +144,5 @@ const createRecipe = async (req, res) => {
 module.exports = {
     getAllRecipesOrName,
     getRecipeById,
-    createRecipe
+    createRecipe,
 };
-
-
-
-
-
-

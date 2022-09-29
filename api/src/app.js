@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const setHeaders = require("./utils/middlewares/setHeaders");
 const routes = require("./routes/index.js");
-const cors = require('cors');
+const cors = require("cors");
 const errorHandler = require("./utils/middlewares/errorHandler");
 
 require("./db.js");

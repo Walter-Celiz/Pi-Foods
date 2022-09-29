@@ -1,4 +1,3 @@
-
 const initialState = {
     recipes: [],
     detail: [],
@@ -22,22 +21,12 @@ function rootReducer(state = initialState, action) {
                 recipes: action.payload,
             };
 
-        // case 'FILTER_BY_STRIC_DIET':
-        //     const allRecipes = state.allRecipes;
-        //     const dietFiltered = action.payload === ""
-        //         ? allRecipes
-        //         : allRecipes.filter(recipe => recipe.diets === action.payload)
-        //     return {
-        //         ...state,
-        //         recipes: dietFiltered
-        //     }
-
         case "FILTER_BY_DIET":
             const allRecipes = state.allRecipes;
             const dietFiltered =
                 action.payload === ""
                     ? allRecipes
-                    : //trae lo que incluya el payload
+                    : //payload includes
                     allRecipes.filter((recipe) =>
                         recipe.diets.includes(action.payload)
                     );
@@ -48,10 +37,11 @@ function rootReducer(state = initialState, action) {
 
         case "FILTER_CREATED":
             const allRecipes2 = state.allRecipes;
-            const createdFilter = action.payload === "created"
-                ? allRecipes2.filter((recipe) => recipe.createdInDb)
-                : allRecipes2.filter((recipe) => !recipe.createdInDb);
-            console.log(createdFilter)
+            const createdFilter =
+                action.payload === "created"
+                    ? allRecipes2.filter((recipe) => recipe.createdInDb)
+                    : allRecipes2.filter((recipe) => !recipe.createdInDb);
+            console.log(createdFilter);
             return {
                 ...state,
                 recipes: action.payload === "all" ? state.allRecipes : createdFilter,
@@ -63,7 +53,8 @@ function rootReducer(state = initialState, action) {
                     ? state.recipes.sort(function (a, b) {
                         if (a.name > b.name) return 1;
                         if (b.name > a.name) return -1;
-                        return 0; //si es 0 el resultado lo deja igual
+                        //if it is 0 the result is the same
+                        return 0;
                     })
                     : state.recipes.sort(function (a, b) {
                         if (a.name > b.name) return -1;
@@ -81,7 +72,7 @@ function rootReducer(state = initialState, action) {
                     ? state.recipes.sort(function (a, b) {
                         if (a.healthScore > b.healthScore) return 1;
                         if (b.healthScore > a.healthScore) return -1;
-                        return 0; //si es 0 el resultado lo deja igual
+                        return 0;
                     })
                     : state.recipes.sort(function (a, b) {
                         if (a.healthScore > b.healthScore) return -1;
@@ -116,3 +107,13 @@ function rootReducer(state = initialState, action) {
 }
 
 export default rootReducer;
+
+// case 'FILTER_BY_STRIC_DIET':
+//     const allRecipes = state.allRecipes;
+//     const dietFiltered = action.payload === ""
+//         ? allRecipes
+//         : allRecipes.filter(recipe => recipe.diets === action.payload)
+//     return {
+//         ...state,
+//         recipes: dietFiltered
+//     }

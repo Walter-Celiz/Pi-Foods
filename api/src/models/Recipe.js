@@ -1,6 +1,6 @@
 const { DataTypes } = require("sequelize");
-// Export define model function 
-// Then inject sequelize connection 
+// Export define model function
+// Then inject sequelize connection
 module.exports = (sequelize) => {
   // define model
   sequelize.define(
@@ -21,15 +21,13 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       healthScore: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
       },
       steps: {
         type: DataTypes.TEXT,
       },
       image: {
         type: DataTypes.STRING,
-        // defaultValue:
-        //   "https://www.trecebits.com/wp-content/uploads/2020/05/Cocina-800x445.jpg",
       },
       createdInDb: {
         type: DataTypes.BOOLEAN,

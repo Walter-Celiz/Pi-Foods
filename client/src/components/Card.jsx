@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom"
-import "../styles/Card.css"
+import { Link } from "react-router-dom";
+import "../styles/Card.css";
 
 export default function Card({ id, name, healthScore, image, diets }) {
     return (
@@ -18,4 +18,3 @@ export default function Card({ id, name, healthScore, image, diets }) {
         </div>
     );
 }
-
