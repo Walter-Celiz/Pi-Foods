@@ -6,24 +6,31 @@ import "../styles/SearchBar.css";
 export default function SearchBar() {
     const dispatch = useDispatch();
     const [name, setName] = useState("");
+    // const [healthScore, setHealthScore] = useState("");
 
     function handleChange(e) {
         // console.log(name);
         e.preventDefault();
+        // if(typeof e.target.value === "string"){
+        //     setName(e.target.value)
+        // }else{
+        //     setHealthScore(e.target.value)
+        // }
         setName(e.target.value);
     }
 
     function handleSubmit(e) {
         e.preventDefault();
-        dispatch(getRecipeByName(name));
         setName("");
+        // setHealthScore("")
+        dispatch(getRecipeByName(name));
     }
 
     return (
         <form className="form__searchBar">
             <input
                 type="text"
-                // placeholder="Name of the Recipe..."
+                value={name} //x
                 autoComplete="off"
                 onChange={(e) => handleChange(e)}
                 className="form__searchBar__input"

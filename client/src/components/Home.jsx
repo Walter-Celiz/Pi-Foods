@@ -100,7 +100,7 @@ export default function Home() {
                 </div>
 
                 <div className="filters__searchBar">
-                    <SearchBar />
+                    <SearchBar setCurrentPage={setCurrentPage} />
                 </div>
 
                 <div className="filters__types">
