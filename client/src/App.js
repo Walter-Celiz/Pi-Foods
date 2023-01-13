@@ -5,7 +5,7 @@ import CreateRecipe from "./components/CreateRecipe";
 import DetailRecipe from "./components/DetailRecipe";
 import "./App.css";
 import axios from "axios";
-axios.defaults.baseURL = "http://localhost:3001/";
+axios.defaults.baseURL = "https://backend-pi-foods.up.railway.app/";
 
 export default function App() {
   return (
