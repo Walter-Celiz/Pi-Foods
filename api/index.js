@@ -8,7 +8,7 @@ try {
   db.sync({ force: true }).then(() => {
     getAllDiets();
     console.log("Diets Charged 🟢🟢🟢🟢");
-    server.listen(3001, () => {
+    server.listen(PORT, () => {
       console.log(`#Server listening at Port:${PORT}!!! 🟢🟢🟢🟢`);
     });
   });
