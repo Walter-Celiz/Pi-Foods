@@ -1,29 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 
 .paginateContainer {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0;
-    font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  justify-content: center;
+  /* margin: 2rem 0; */
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .paginate__ul {
-    display: flex;
-    background: #d64c3f;
-    border-radius: 15px;
-    padding: 0 1rem;
-    cursor: pointer;
-    margin-bottom: 2rem;
+  display: flex;
+  /* background: #d64c3f; */
+  /* border-radius: 15px; */
+  /* padding: 0 1rem; */
+  cursor: pointer;
+  /* margin-bottom: 2rem; */
 }
 
 .paginate__li {
-    color: white;
-    font-size: 2rem;
-    list-style: none;
-    margin: 0 0.1rem;
+  color: white;
+  background: #d64c3f;
+  font-size: 1.4rem;
+  list-style: none;
+  margin: 0 0.1rem;
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 0 6px;
 }
 
-.paginate__li :hover {
-    background: black;
-    border-radius: 10px;
+.paginate__ul :hover {
+  color: black;
+  /* border-radius: 50%; */
+  /* padding: 0 10px; */
 }
