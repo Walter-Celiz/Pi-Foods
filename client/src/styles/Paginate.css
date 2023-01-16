@@ -3,17 +3,12 @@
 .paginateContainer {
   display: flex;
   justify-content: center;
-  /* margin: 2rem 0; */
   font-family: "Source Sans Pro", sans-serif;
 }
 
 .paginate__ul {
   display: flex;
-  /* background: #d64c3f; */
-  /* border-radius: 15px; */
-  /* padding: 0 1rem; */
-  cursor: pointer;
-  /* margin-bottom: 2rem; */
+  margin-bottom: 2rem;
 }
 
 .paginate__li {
@@ -25,10 +20,9 @@
   border: 1px solid white;
   border-radius: 50%;
   padding: 0 6px;
+  cursor: pointer;
 }
 
 .paginate__ul :hover {
   color: black;
-  /* border-radius: 50%; */
-  /* padding: 0 10px; */
 }

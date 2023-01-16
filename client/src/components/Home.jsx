@@ -13,6 +13,7 @@ import Card from "./Card";
 import Paginate from "./Paginate";
 import SearchBar from "./SearchBar";
 import Navbar from "./Navbar";
+import ScrollToTop from "./ScrollToTop";
 
 import "../styles/Home.css";
 import "../styles/Filters.css";
@@ -68,6 +69,7 @@ export default function Home() {
 
   return (
     <div className="homeContainer">
+      <ScrollToTop />
       <Navbar />
 
       <div className="filterContainer">
@@ -187,7 +189,7 @@ export default function Home() {
         })}
       </div>
 
-      <div className="bottm">
+      <div className="">
         <Paginate
           recipesPerPage={recipesPerPage}
           allRecipes={allRecipes.length}
