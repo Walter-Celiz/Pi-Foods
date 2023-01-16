@@ -2,8 +2,14 @@
 
 # Individual Project - Henry Food
 
-<p align="right">
-  <img height="200" src="./cooking.png" />
+<p align="center">
+  <img height="400" src="./1.png" />
+</p>
+<p align="center">
+  <img height="400" src="./2.png" />
+</p>
+<p align="center">
+  <img height="400" src="./3.png" />
 </p>
 
 ## Objetivos del Proyecto
