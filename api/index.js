@@ -10,7 +10,7 @@ try {
     // getAllDiets();
     // console.log("Diets Charged 🟢🟢🟢🟢");
     server.listen(PORT, () => {
-      console.log("#Server listening at", process.env.PORT);
+      console.log("#Server listening at: ", process.env.PORT);
     });
   });
 } catch (error) {
