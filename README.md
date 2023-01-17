@@ -16,7 +16,7 @@
 
 ## Objetivos del Proyecto.
 
-Crear una Aplicación web donde se puedan encontrar diferentes tipos de recetas de cocina 🥗, utilizando una API externa (https://spoonacular.com/food-api). Y a partir de ella, poder entre otras cosas:
+Crear una Aplicación web donde se puedan encontrar diferentes tipos de recetas de cocina 🥗, utilizando una API externa (https://spoonacular.com). Y a partir de ella, poder entre otras cosas:
 
   ✅ Buscar recetas
 
@@ -74,13 +74,16 @@ Crear una Aplicación web donde se puedan encontrar diferentes tipos de recetas 
 
 
 ```
-DB_USER=usuariodepostgres
-DB_PASSWORD=passwordDePostgres
+API_KEY=tuApiKey (from https://spoonacular.com)
 DB_HOST=localhost
-API_KEY=yourApiKey
+DB_USER=tuUsuarioDePostgres
+DB_PASSWORD=passwordDePostgres
+DB_NAME=foods
+DB_PORT=TuDbPort
+PORT=TuPort
 ```
 
-Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credenciales para conectarte a postgres. 
+Reemplazar con tus propias credenciales para conectarte a postgres. 
 
 # Instalacion ⚙
 
