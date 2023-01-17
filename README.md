@@ -5,13 +5,13 @@
 # Individual Project - Henry Foods - Walter Celiz
 
 <p align="center">
-  <img height="500" src="./1" />
+  <img height="500" src="./1.png" />
 </p>
 <p align="center">
-  <img height="500" src="./2" />
+  <img height="500" src="./2.png" />
 </p>
 <p align="center">
-  <img height="500" src="./3" />
+  <img height="500" src="./3.png" />
 </p>
 
 ## Objetivos del Proyecto.
