@@ -74,7 +74,7 @@ Crear una Aplicación web donde se puedan encontrar diferentes tipos de recetas 
 
 
 ```
-API_KEY=tuApiKey (from https://spoonacular.com)
+API_KEY=tuApiKey (https://spoonacular.com)
 DB_HOST=localhost
 DB_USER=tuUsuarioDePostgres
 DB_PASSWORD=passwordDePostgres
