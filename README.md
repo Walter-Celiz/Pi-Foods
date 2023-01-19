@@ -4,13 +4,13 @@
 
 # Individual Project - Henry Foods - Walter Celiz
 
-<p align="center">
+<p align="">
   <img height="400" src="./1.png" />
 </p>
-<p align="center">
+<p align="">
   <img height="400" src="./2.png" />
 </p>
-<p align="center">
+<p align="">
   <img height="400" src="./3.png" />
 </p>
 
