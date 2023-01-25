@@ -74,7 +74,7 @@ Crear una Aplicación web donde se puedan encontrar diferentes tipos de recetas 
 
 
 ```
-API_KEY=tuApiKey (https://spoonacular.com)
+API_KEY=tuApiKey (genera una de https://spoonacular.com)
 DB_HOST=localhost
 DB_USER=tuUsuarioDePostgres
 DB_PASSWORD=passwordDePostgres
@@ -82,12 +82,11 @@ DB_NAME=foods
 DB_PORT=TuDbPort
 PORT=TuPort
 ```
-
 Reemplazar con tus propias credenciales para conectarte a postgres. 
 
 # Instalacion ⚙
 
-Utilice el administrador de paquetes npm para instalar. (Recuerde usar este comando dentro de /client y dentro de /api)
+4. Utilice el administrador de paquetes npm para instalar. (Recuerde usar este comando dentro de /client y luego dentro de /api)
 
 ```
 npm install ⚙
@@ -104,4 +103,5 @@ npm start
 ```
 npm start
 ```
+5. Si necesitas cambiar las llamadas al back, puedes comentar linea 10 en client/src/index.js y descomentar linea 11
 
