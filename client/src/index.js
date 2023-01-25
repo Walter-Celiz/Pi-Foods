@@ -8,7 +8,7 @@ import { store } from "./redux/store/index";
 import axios from "axios";
 
 /* deploy */ axios.defaults.baseURL = "https://pi-foods-backend.vercel.app/";
-/* local */ axios.defaults.baseURL = "http:localhost:3001/";
+// /* local */ axios.defaults.baseURL = "http:localhost:3001/";
 
 ReactDOM.render(
   <Provider store={store}>
